@@ -24,7 +24,7 @@ if( sound == null) {
 
 const id = uuidv4();
 
-setInterval(() => play(id, instrument, sound), 1000);
+setInterval(() => play(id, sound), 1000);
 
 
 function play (id, sound) {
