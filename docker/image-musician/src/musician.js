@@ -13,14 +13,9 @@ const soundFromInstrument = {
    drum: 'boum-boum'
 };
 
-const intrument = process.argv[2];
-var sound;
+const instrument = process.argv[2];
+const sound = getSound(instrument);
 
-if (instrument in soundFromInstrument) {
-    sound = soundFromInstrument[instrument];
-} else {
-    sound = null;
-}
 
 if( sound == null) {
     console.log("Instrument invalide");
@@ -41,8 +36,14 @@ function play (id, sound) {
 
     const message = JSON.stringify(toJson);
 
-    socket.send(message, 0, message.length, 60491, 255.255.255.255, console.log("Data send : " + payload));
+    socket.send(message, 0, message.length, 60491, '255.255.255.255', console.log("Data send : " + message));
 
 }
 
-
+function getSound( instrument ) {
+    if (instrument in soundFromInstrument) {
+        return soundFromInstrument[instrument];
+    } else {
+        return null;
+    }
+}
