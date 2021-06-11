@@ -142,17 +142,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | En créant un Dockerfile avec une image de node avec notre script à l'intérieur. |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | Cette instruction definié les commandes qui seront exécutée quand le container sera lancé. |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | `docker run container-name intrument` |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+|  | `docker ps`                                                  |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | `docker kill container-name` |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | On peut faire apparaitre un retour visuel (avec un console log) mais pour s'assurer que envoie bien des trames UDP on peut scaner les trames réseaux avec wireshark |
 
 
 ## Task 4: implement an "auditor" Node.js application
