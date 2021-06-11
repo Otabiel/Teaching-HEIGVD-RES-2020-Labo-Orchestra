@@ -160,15 +160,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | ---  |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*  |
+| | En utilisant la méthode bind, et en écoutant sur le port sur lequel émet UDP |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+|  | En associant chaque instrument à son son. On pourra alors faire matché le sont reçu avec notre liste d'instrument. |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | Permet de manipuler et d'afficher les dates. |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | Lorsque que l'on reçoit une requête TCP, si le son n'a pas été émis pendant les 5 dernières secondes. Alors il sera considéré comme plus actif. |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | En utilisant le module net de npm |
 
 
 ## Task 5: package the "auditor" app in a Docker image
