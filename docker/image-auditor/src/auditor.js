@@ -4,7 +4,7 @@ var moment = require('moment');
 
 var musiciens = new Map();
 
-var socket = dgram.createSocket('udp4');
+
 
 const instrumentFromSound = {
    'ti-ta-ti': 'piano',
@@ -14,9 +14,9 @@ const instrumentFromSound = {
    'boum-boum': 'drum'
 };
 
-socket.bind(60491, function() {
-    console.log("Écoute sur le port : 60491");
-    socket.addMembership('255.255.255.255');
+var socket = dgram.createSocket('udp4');
+socket.bind(9907, function() {
+    socket.addMembership('239.255.22.5');
 });
 
 socket.on('message', function(message, src) {
@@ -34,9 +34,9 @@ socket.on('message', function(message, src) {
 })
 
 
-var tcpSocket = new.createServer();
+var tcpSocket = net.createServer();
 
-tcpSocket.listen(60491, console.log("TCP running"));
+tcpSocket.listen(2205, console.log("TCP running"));
 
 tcpSocket.on('connection', function( client ) {
     console.log("Connection établie");
@@ -47,8 +47,7 @@ tcpSocket.on('connection', function( client ) {
         }
     });
 
-    console.log("Data send : " + JSON.stringify(Array.from(musiciens.values())));
-    client.write(Buffer.from(JSON.stringify(Array.from(musicians.values()))));
+    client.write(JSON.stringify(Array.from(musiciens.values())));
 
     client.destroy();
     

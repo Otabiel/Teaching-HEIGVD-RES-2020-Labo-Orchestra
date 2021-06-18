@@ -24,20 +24,18 @@ if( sound == null) {
 
 const id = uuidv4();
 
-setInterval(() => play(id, sound), 1000);
 
-
-function play (id, sound) {
-
-    const toJson = {
+const toJson = {
         uuid: id,
         sound: sound   
-    }
+}
 
-    const message = JSON.stringify(toJson);
+const message = JSON.stringify(toJson);
 
-    socket.send(message, 0, message.length, 60491, '255.255.255.255', console.log("Data send : " + message));
+setInterval(() => play(id, sound), 1000);
 
+function play (id, sound) {
+    socket.send(message, 0, message.length, 9907, '239.255.22.5', console.log("Data send : " + message));
 }
 
 function getSound( instrument ) {
