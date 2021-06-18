@@ -176,7 +176,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | En lançant le script `validate.sh`, mais nous avons testé tout de même les cas invalide, par exemple lancé le docker du musicien avec aucun instrument/un instrument invalide. |
 
 
 ## Constraints
